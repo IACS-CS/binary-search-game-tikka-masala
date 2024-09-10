@@ -1,6 +1,6 @@
 import "./style.css";
 import { TextInterface } from "text-interface";
-
+// Get the element with id="app"
 let app = document.querySelector("#app");
 // Create a new "Text Interface"
 
