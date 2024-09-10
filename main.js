@@ -3,6 +3,7 @@ import { TextInterface } from "text-interface";
 
 let app = document.querySelector("#app");
 // Create a new "Text Interface"
+
 let ti = new TextInterface(app, "NFL Team Guesser");
 ti.output("Think of a NFL team and I will try to guess it.");
 ti.output("Is it in the AFC?");
@@ -33,5 +34,4 @@ if(userAnswer) {
 } else {
   
 }
-
 
