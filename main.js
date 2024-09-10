@@ -3,8 +3,8 @@ import { TextInterface } from "text-interface";
 
 let app = document.querySelector("#app");
 // Create a new "Text Interface"
-let ti = new TextInterface(app, "Guess The Hogwarts House");
-ti.output("What is your name?");
+let ti = new TextInterface(app, "Guess Your Hogwarts House");
+ti.output("Are you brave?");
 let name = await ti.readText();
 ti.output("Hello, " + name);
 
