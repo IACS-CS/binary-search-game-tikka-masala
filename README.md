@@ -1,4 +1,4 @@
-Hello friends. This is a very simple interface, designed to help you practice some basic flow control and make a very simple text game.
+## About text interface
 
 You can read [documentation](https://thinkle-iacs.github.io/Text-Interface-Sandbox/) here!
 
