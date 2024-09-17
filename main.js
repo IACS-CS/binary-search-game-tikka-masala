@@ -11,10 +11,11 @@ let app = document.querySelector("#app");
 // Create a new "Text Interface"
 
 let ti = new TextInterface(app, "What chocolate bar are you?");
+ti.outputAnimationLength = 10;
 ti.output("What is your name?");
 let name = await ti.readText();
 ti.output("Hello, " + name);
-const choices = ["Math", "English", "science","History"];
+const choices = ["Math", "English", "Science","History"];
   let selection = await ti.readChoice(
     choices,
     // list of choices
@@ -24,22 +25,64 @@ const choices = ["Math", "English", "science","History"];
     // custom error message (optional)
   )
   const seasons = ["Spring", "Summer", "Fall", "Winter"];
-  season = await ti.readChoice(
+  let season = await ti.readChoice(
     seasons,
     // list of choices
     "What is your favorite season?",
     // prompt (optional)
-    "Fall is the better season"
+    "Pick a real answer!"
     // custom error message (optional)
   );
-  if (selection == "Fall") {
-    ti.output("Chocolate is my favorite too!");
+  if (season == "Fall") {
+    ti.output("Fall is my favorite too!");
   } else {
-    ti.output(`Ok, I guess. Fall is better, but I like ${selection} too.`);
+    ti.output(`Ok, I guess. Fall is better, but I like ${season} too.`);
   }
-//what is your fev class.(english,math,science,history)
-//what is your fev season (fall.winter,spring,summer)
-//What country do you want to visit(dubai,aus,japen,italy,)
-//what is your fav games(uno,mon,chess,scrabble)
-//what is your gaming platform(pc,ps4,xbox,switch)
-//what is your fav color?(red,blue,pink,purple)
+  
+  const countries = ["Dubai", "Australia", "Japan", "Italy"];
+  let country = await ti.readChoice(
+    countries,
+    // list of choices
+    "What country do you want to visit?",
+    // prompt (optional)
+    "Pick a real answer!"
+    // custom error message (optional)
+  );
+  if (country == "Italy") {
+    ti.output("Italy is a beautiful country!");
+  } else {
+    ti.output(`Ok, I guess. Italy is cooler, but I like ${country} too.`);
+  }
+  const colors = ["Blue", "Red", "Orange", "Green", "Purple", "Yellow"];
+  let color = await ti.readChoice(
+    colors,
+    // list of choices
+    "What's Your Favorite Color?",
+    // prompt (optional)
+    "Pick a real answer!"
+    // custom error message (optional)
+  );
+  if (color == "Blue") {
+    ti.output("You are Hershey's Bar");
+  } else if (color == "Red") {
+    ti.output( "You are Kit-Kat Bar")
+  } else if (color == "Orange") {
+    ti.output ("You are Reese's")
+  } else if (color == "Green") {
+    ti.output("You are Snickers")
+  } else if (color == "Purple") {
+    ti.output("You are Crunch")
+    }
+    else if (color == "Yellow"){
+        ti.output("You are Twix")
+      }
+    
+
+    
+    
+    
+  
+  
+  
+    
+  
