@@ -224,7 +224,12 @@ const choices = ["Math", "English", "Science","History"];
     
         ti.output("Would you like to play again? (Yes or No)");
       playAgain = await ti.readYesOrNo();
+       // If the user chooses "No", thank them for playing
+  if (!playAgain) {
+    await ti.output("Thank you for playing!");
+  }
 }
+
 //what is your fav class(english,math,science,history)
 //what is your fav season(summer,fall,spring,winter)
 //what is your fav place to vist(,Dubai,Australia, Japan, Italy)
