@@ -152,8 +152,10 @@ class r {
 let app = document.querySelector("#app");
 
 // Create a new "Text Interface"
-
-let ti = new r(app, "What chocolate bar are you?");
+const ti = new r();
+let playAgain = true;
+while (playAgain) {
+await ti.output ; new r(app, "What chocolate bar are you?");
 ti.outputAnimationLength = 10;
 ti.output("What is your name?");
 let name = await ti.readText();
@@ -219,3 +221,7 @@ const choices = ["Math", "English", "Science","History"];
     else if (color == "Yellow"){
         ti.output("You are Twix");
       }
+    
+        ti.output("Would you like to play again? (Yes or No)");
+      playAgain = await ti.readYesOrNo();
+}
