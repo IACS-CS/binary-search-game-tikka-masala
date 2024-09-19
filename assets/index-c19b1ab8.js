@@ -225,3 +225,7 @@ const choices = ["Math", "English", "Science","History"];
         ti.output("Would you like to play again? (Yes or No)");
       playAgain = await ti.readYesOrNo();
 }
+//what is your fav class(english,math,science,history)
+//what is your fav season(summer,fall,spring,winter)
+//what is your fav place to vist(,Dubai,Australia, Japan, Italy)
+//what is your fav color(Blue", "Red", "Orange", "Green", "Purple", "Yellow")
