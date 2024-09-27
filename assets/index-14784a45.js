@@ -214,37 +214,39 @@ while (playAgain) {
 
     // Third binary choice: Country
     let countryChoice = await ti.readChoice(
-        ["Europe", "Asia"], // Two main options
-        "Which epic region do you wish to conquer: Europe or Asia? (Prepare your passport!)", // Prompt
-        "Excellent choice!" // Confirmation message
+        ["Europe", "Asia"],
+        "Which epic region do you wish to conquer: Europe or Asia? (Prepare your passport!)"
     );
-
-    // Handle unexpected answers for country choice
-    if (countryChoice !== "Europe" && countryChoice !== "Asia") {
-        ti.output("Planning a space mission? Sorry, we're not NASA. Let’s stick to Earth!");
-        countryChoice = "Asia"; // Default to a valid choice
-    }
-
+    
     // Get the user's specific favorite country from their chosen region
     let country; // Variable to hold the user's country choice
     if (countryChoice === "Asia") {
         country = await ti.readChoice(
-            ["India", "Japan", "Singapore"], // Options for Asia
-            "Which country from Asia do you wish to visit? (Curry or sushi? Tough choice!)" // Prompt for Asia
+            ["India", "Japan", "Singapore"],
+            "Which country from Asia do you wish to visit? (Curry or sushi? Tough choice!)"
         );
-        ti.output(country === "India") 
-            ? "India is a beautiful country! Just watch out for the curry explosions!" 
-            : `Alright, but India has the best food! I like ${country} too.`;
+        // Remove boolean outputs here
+        if (country === "India") {
+            ti.output("India is a beautiful country! Just watch out for the curry explosions!");
+        } else if (country === "Japan") {
+            ti.output("Japan is amazing! Sushi and cherry blossoms await you!");
+        } else {
+            ti.output("Singapore is a fantastic choice! The food scene is incredible!");
+        }
     } else { // This block runs if Europe is chosen
         country = await ti.readChoice(
-            ["Italy", "England", "Spain"], // Options for Europe
-            "Which country from Europe do you want to explore? (Pizza, tea, or paella?)" // Prompt for Europe
+            ["Italy", "England", "Spain"],
+            "Which country from Europe do you want to explore? (Pizza, tea, or paella?)"
         );
-        ti.output(country === "Italy") 
-            ? "Italy is a beautiful country! Pasta party, anyone?" 
-            : `Sure, but let's be real—Italy is where the real food is! I like ${country} too.`;
+        // Remove boolean outputs here
+        if (country === "Italy") {
+            ti.output("Italy is a beautiful country! Pasta party, anyone?");
+        } else if (country === "England") {
+            ti.output("England is full of history and tea! Fancy a cup?");
+        } else {
+            ti.output("Spain is vibrant and lively! Don't forget the paella!");
+        }
     }
-
     // Fourth binary choice: Color
     let colorChoice = await ti.readChoice(
         ["Warm Colors", "Cool Colors"], // Two main options
